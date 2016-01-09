@@ -55,13 +55,13 @@ It is possible to suppress the TOC generation in specific pages, for example the
 This can be done into the [Front Matter](http://jekyllrb.com/docs/frontmatter/) section used by jekyll
 
 
-You must add the `noToc: true` directive
+You must add the `toc: false` directive
 
     ---
     permalink: index.html
     layout: default
     title: Main Page with TOC
-    noToc: true
+    toc: false
     ---
 
 
@@ -87,6 +87,7 @@ Normally no configuration is necessary but you can set some parameter into you `
 <td>The top level tag given nokogiri to find<br/>Suppose you want to generated the TOC start form h1 to h5</td>
 <td>h1</td>
 </tr>
+
 <tr>
 <td>anchorPrefix</td>
 <td>The prefix used to generate the anchor name</td>
@@ -97,6 +98,22 @@ Normally no configuration is necessary but you can set some parameter into you `
 <td>showToggleButton</td>
 <td>The TOC has a button used to collapse/expand the list, this requires a little of Javascript
 <br/>This package contains a jQuery plugin to handle the click</td>
+<td>false</td>
+</tr>
+
+<tr>
+<td>tocInsertElement</td>
+<td>target element</td>
+<td>'body'</td>
+</tr>
+<tr>
+<td>tocInsertPosition</td>
+<td>'before' or 'after'</td>
+<td>'before'</td>
+</tr>
+<tr>
+<td>tocInsertChildren</td>
+<td>into tocInsertElement.children?</td>
 <td>false</td>
 </tr>
 </table>
