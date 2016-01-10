@@ -110,21 +110,27 @@ module Jekyll
         .gsub('%1', replaced_toggle_html)
         .gsub('%2', toc_html)
 
-        insert_element = config["tocInsertElement"] || 'body' # default 'body'
+        insert_element = config["tocInsertElement"] || 'article' # default 'body'
         insert_position = config["tocInsertPosition"] || 'before' # before , after
         insert_children = config["tocInsertChildren"] || 'false' # before , after
 
+        if insert_element != ''
+          target = doc.css(insert_element)
+        else
+          target = doc
+        end
+
         if insert_position == 'before'
           if insert_children == true
-            doc.css(insert_element).children.before(toc_table)
+            target.children.before(toc_table)
           else
-            doc.css(insert_element).before(toc_table)
+            target.before(toc_table)
           end
         elsif insert_position == 'after'
           if insert_children == true
-            doc.css(insert_element).children.after(toc_table)
+            target.children.after(toc_table)
           else
-            doc.css(insert_element).after(toc_table)
+            target.after(toc_table)
           end
         end
       end

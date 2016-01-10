@@ -104,7 +104,7 @@ Normally no configuration is necessary but you can set some parameter into you `
 <tr>
 <td>tocInsertElement</td>
 <td>target element</td>
-<td>'body'</td>
+<td>'article'</td>
 </tr>
 <tr>
 <td>tocInsertPosition</td>
